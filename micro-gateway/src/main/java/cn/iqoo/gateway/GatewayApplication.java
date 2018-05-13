@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 @EnableDiscoveryClient
 public class GatewayApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(GatewayApplication.class, args);
     }
@@ -17,8 +18,9 @@ public class GatewayApplication {
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route(r -> r.path("/baidu")
-                        .addRequestHeader("X-SNS", "valut")
+                .route(r -> r.host("**").and().path("/baidu")
+                        .filters(f -> f.addRequestHeader("xns", "baidu")
+                                .addResponseHeader("godada", "daddy"))
                         .uri("http://baidu.com:80/")
                 ).build();
     }
