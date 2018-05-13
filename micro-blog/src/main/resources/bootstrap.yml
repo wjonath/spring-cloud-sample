@@ -1,0 +1,12 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6000/eureka/
+spring:
+  cloud:
+    config:
+#      profile: @package.environment@
+      discovery:
+        enabled: true
+        service-id: micro-config
+

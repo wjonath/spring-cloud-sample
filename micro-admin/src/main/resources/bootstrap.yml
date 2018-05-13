@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: micro-admin
+  boot:
+    admin:
+#      routes:
+#        endpoints: env,metrics,trace,dump,jolokia,info,configprops,trace,logfile,refresh,flyway,liquibase,heapdump,hystrix.stream
+      context-path: /sba
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6000/eureka/
+
+# 测试,不使用密码
+server:
+  port: 6006
+
+management:
+  security:
+    enabled: false

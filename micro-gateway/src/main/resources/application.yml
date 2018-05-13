@@ -1,0 +1,10 @@
+server:
+  port: 6001
+
+spring:
+  application:
+    name: micro-gateway
+management:
+  security:
+    enabled: false
+debug: true

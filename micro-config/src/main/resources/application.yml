@@ -1,0 +1,21 @@
+server:
+  port: 6001
+
+spring:
+  application:
+    name: micro-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/wjonath/config-center.git
+      label: master
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6000/eureka/
+
+management:
+  security:
+    enabled: false

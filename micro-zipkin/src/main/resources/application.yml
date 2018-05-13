@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 192.168.146.128:9092
+          zkNodes: 192.168.146.128:2181
+
+zipkin:
+  storage:
+    type: elasticsearch
+    elasticsearch:
+      hosts: http://192.168.146.128:9200
+      username: elastic
+#      password: changeme
+#      cluster: elasticsearch
+      index: zipkin
+      index-shards: 1
+      index-replicas: 1
+debug: true
