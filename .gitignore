@@ -25,3 +25,4 @@ hs_err_pid*
 # self setting
 */.flattened-pom.xml
 */target/
+.idea/
