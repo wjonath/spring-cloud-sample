@@ -35,23 +35,23 @@ import java.io.IOException;
 @WebFilter(urlPatterns = "/*", filterName = "xssFilter")
 public class XssFilter implements Filter {
 
-	@SuppressWarnings("unused")
-	private FilterConfig filterConfig;
+    @SuppressWarnings("unused")
+    private FilterConfig filterConfig;
 
-	@Override
-	public void destroy() {
-		this.filterConfig = null;
-	}
+    @Override
+    public void destroy() {
+        this.filterConfig = null;
+    }
 
-	@Override
-	public void doFilter(ServletRequest request, ServletResponse response,
-						 FilterChain chain) throws IOException, ServletException {
-		chain.doFilter(request, response);
-	}
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response,
+                         FilterChain chain) throws IOException, ServletException {
+        chain.doFilter(request, response);
+    }
 
-	@Override
-	public void init(FilterConfig filterConfig) throws ServletException {
-		this.filterConfig = filterConfig;
-	}
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+        this.filterConfig = filterConfig;
+    }
 
 }
