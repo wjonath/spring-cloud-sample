@@ -1,19 +1,14 @@
 
 
-package com.hhly.sns.api.config;
+package cn.iqoo.user.config;
 
-import ch.qos.logback.ext.spring.web.LogbackConfigListener;
-import org.springframework.boot.web.servlet.FilterRegistrationBean;
-import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.filter.CharacterEncodingFilter;
-import org.springframework.web.filter.HttpPutFormContentFilter;
-import org.springframework.web.servlet.DispatcherServlet;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.web.multipart.MultipartResolver;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
  * 注册 filter、listener、servlet，替代web.xml中的配置
