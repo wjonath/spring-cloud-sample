@@ -10,13 +10,10 @@
  * @修改内容:
  */
 
-package com.hhly.sns.h5.filter;
+package cn.iqoo.user.filter;
 
-import com.hhly.sns.h5.sys.ApplicationContextHelper;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.stereotype.Component;
-import org.springframework.web.multipart.MultipartResolver;
-import org.springframework.web.servlet.DispatcherServlet;
 
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
@@ -25,8 +22,6 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServletRequest;
-import javax.xml.ws.RequestWrapper;
 import java.io.IOException;
 
 /**
@@ -37,20 +32,24 @@ import java.io.IOException;
  */
 @Component
 @ServletComponentScan
-@WebFilter(urlPatterns = "/*", filterName = "xssFilter")public class XssFilter implements Filter {
+@WebFilter(urlPatterns = "/*", filterName = "xssFilter")
+public class XssFilter implements Filter {
 
 	@SuppressWarnings("unused")
 	private FilterConfig filterConfig;
 
+	@Override
 	public void destroy() {
 		this.filterConfig = null;
 	}
 
+	@Override
 	public void doFilter(ServletRequest request, ServletResponse response,
 						 FilterChain chain) throws IOException, ServletException {
-		chain.doFilter(new RequestWrapper((HttpServletRequest) request), response);
+		chain.doFilter(request, response);
 	}
 
+	@Override
 	public void init(FilterConfig filterConfig) throws ServletException {
 		this.filterConfig = filterConfig;
 	}
