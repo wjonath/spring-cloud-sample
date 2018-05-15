@@ -1,14 +1,3 @@
-/*
- * @project name: spring-cloud-sample
- * @file name: ApplicationMetricsHandler
- * @package Name: cn.iqoo.user.handler
- * @date: 2018/5/15 18:16
- * @creator: wangjian-358
- * @line------------------------------
- * @modifier:
- * @date:
- * @content:
- */
 package cn.iqoo.user.handler;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +11,10 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * ${TODO}
+ * 自定义度量信息，可用于业务监控
  *
- * @author wangjian-358
+ * @author jonath@163.com
  * @date 2018/5/15 18:16
- * @see
  */
 @Component
 public class ApplicationMetricsHandler implements PublicMetrics {
@@ -37,7 +25,7 @@ public class ApplicationMetricsHandler implements PublicMetrics {
     @Override
     public Collection<Metric<?>> metrics() {
         List<Metric<?>> metrics = new ArrayList<>();
-        metrics.add(new Metric<Long>("spring.ext.date", context.getStartupDate()));
+        metrics.add(new Metric<>("spring.ext.date", context.getStartupDate()));
         return metrics;
     }
 }

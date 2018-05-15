@@ -1,4 +1,3 @@
-
 package cn.iqoo.user.filter;
 
 import lombok.extern.slf4j.Slf4j;
@@ -13,11 +12,10 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * ${TODO}
+ * TODO
  *
- * @author wangjian-358
+ * @author jonath@163.com
  * @date 2018/5/15 17:39
- * @see
  */
 @Slf4j
 public class RequestWrapper extends HttpServletRequestWrapper {
@@ -26,15 +24,15 @@ public class RequestWrapper extends HttpServletRequestWrapper {
         super(request);
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
+    @SuppressWarnings({"rawtypes", "unchecked"})
     @Override
-    public Map<String,String[]> getParameterMap(){
-        Map<String,String[]> requestMap = super.getParameterMap();
+    public Map<String, String[]> getParameterMap() {
+        Map<String, String[]> requestMap = super.getParameterMap();
         Iterator iterator = requestMap.entrySet().iterator();
-        while(iterator.hasNext()){
-            Map.Entry me = (Map.Entry)iterator.next();
-            String[] values = (String[])me.getValue();
-            for(int i = 0 ; i < values.length ; i++){
+        while (iterator.hasNext()) {
+            Map.Entry me = (Map.Entry) iterator.next();
+            String[] values = (String[]) me.getValue();
+            for (int i = 0; i < values.length; i++) {
                 System.out.println(values[i]);
                 values[i] = xssClean(values[i]);
             }

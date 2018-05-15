@@ -1,14 +1,3 @@
-/*
- * @project name: spring-cloud-sample
- * @file name: AmazonHealth
- * @package Name: cn.iqoo.user.handler
- * @date: 2018/5/15 18:26
- * @creator: wangjian-358
- * @line------------------------------
- * @modifier:
- * @date:
- * @content:
- */
 package cn.iqoo.user.handler;
 
 import org.springframework.boot.actuate.health.Health;
@@ -16,11 +5,10 @@ import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.web.client.RestTemplate;
 
 /**
- * ${TODO}
+ * TODO
  *
- * @author wangjian-358
+ * @author jonath@163.com
  * @date 2018/5/15 18:26
- * @see
  */
 public class AmazonHealth implements HealthIndicator {
     @Override

@@ -1,15 +1,3 @@
-/*
- * @Project Name: ip-java-web-servers
- * @File Name: XssRequestWrapper
- * @Package Name: com.hhly.sns.org.cms.filter
- * @Date: 2017/5/18 16:53
- * @Creator: chenghb-799
- * @line------------------------------
- * @修改人:
- * @修改时间:
- * @修改内容:
- */
-
 package cn.iqoo.user.filter;
 
 import org.springframework.boot.web.servlet.ServletComponentScan;
@@ -26,9 +14,9 @@ import java.io.IOException;
 
 /**
  * XSS过滤器
+ *
+ * @author jonath@163.com
  * @date 2017/8/5 11:07
- * @author guoya-420
- * @since 1.0.0
  */
 @Component
 @ServletComponentScan
