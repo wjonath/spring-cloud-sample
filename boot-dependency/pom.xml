@@ -28,6 +28,7 @@
         <lombok.version>1.16.20</lombok.version>
         <spring-boot-admin.version>1.5.4</spring-boot-admin.version>
         <zipkin-storage-elasticsearch.version>2.4.1</zipkin-storage-elasticsearch.version>
+        <antisamy.version>1.5.5</antisamy.version>
     </properties>
 
     <dependencyManagement>
@@ -88,6 +89,11 @@
                 <groupId>io.zipkin.java</groupId>
                 <artifactId>zipkin-autoconfigure-storage-elasticsearch-http</artifactId>
                 <version>${zipkin-storage-elasticsearch.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.owasp.antisamy</groupId>
+                <artifactId>antisamy</artifactId>
+                <version>${antisamy.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
