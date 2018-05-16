@@ -1,6 +1,6 @@
 package cn.iqoo.user.controller;
 
-import cn.iqoo.user.config.Props;
+import cn.iqoo.user.config.PropertiesReader;
 import cn.iqoo.user.constants.JmsConstant;
 import cn.iqoo.user.entity.UserInfo;
 import cn.iqoo.user.repository.UserRepository;
@@ -26,7 +26,7 @@ public class ConfigController {
     @Autowired
     private UserRepository userRepository;
     @Autowired
-    private Props props;
+    private PropertiesReader propertiesReader;
 
     @GetMapping("/json")
     public List<String> getConfig() {
@@ -34,8 +34,8 @@ public class ConfigController {
         Stream<String> stream = list.stream();
         List<String> ll = stream.filter(s -> s.contains("o")).limit(2).collect(Collectors.toList());
         System.out.println(ll);
-        System.out.println(props.getPort());
-        System.out.println(props.getLocations());
+        System.out.println(propertiesReader.getPort());
+        System.out.println(propertiesReader.getLocations());
 //        redisTemplate.opsForValue().set("x", 111);
 //        send("gogogo");
 //        addMongo();
