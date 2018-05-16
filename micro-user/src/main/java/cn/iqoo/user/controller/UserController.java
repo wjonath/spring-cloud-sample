@@ -4,6 +4,7 @@
  */
 package cn.iqoo.user.controller;
 
+import cn.iqoo.user.annotation.Contact;
 import cn.iqoo.user.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @Slf4j
 @RestController
+@Contact
 public class UserController {
 
     @Autowired
