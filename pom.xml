@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>cn.iqoo</groupId>
-	<artifactId>spring-cloud-sample</artifactId>
-	<version>1.0-SNAPSHOT</version>
-	<packaging>pom</packaging>
+    <groupId>cn.iqoo</groupId>
+    <artifactId>micro-build</artifactId>
+    <version>${revision}</version>
+    <packaging>pom</packaging>
 
-	<name>spring-cloud-sample</name>
-	<description>project spring-cloud-sample</description>
+    <name>micro-build</name>
+    <description>project micro-build</description>
 
-	<properties>
-		<main.basedir>${basedir}/../..</main.basedir>
-	</properties>
+    <properties>
+        <main.basedir>${basedir}</main.basedir>
+        <version-number>0.0.1</version-number>
+        <version-suffix>-SNAPSHOT</version-suffix>
+        <revision>${version-number}${version-suffix}</revision>
+    </properties>
 
-	<modules>
-		<module>boot-dependency</module>
-		<module>micro-admin</module>
-		<module>micro-blog</module>
-		<module>micro-config</module>
-		<module>micro-eureka</module>
-		<module>micro-gateway</module>
-		<module>micro-security</module>
-		<module>micro-user</module>
-		<module>micro-zipkin</module>
-	</modules>
+    <modules>
+        <module>boot-dependency</module>
+        <module>micro-admin</module>
+        <module>micro-blog</module>
+        <module>micro-config</module>
+        <module>micro-eureka</module>
+        <module>micro-gateway</module>
+        <module>micro-security</module>
+        <module>micro-user</module>
+        <module>micro-zipkin</module>
+    </modules>
 </project>
