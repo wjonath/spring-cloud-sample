@@ -15,7 +15,7 @@
         <main.basedir>${basedir}</main.basedir>
         <version-number>0.0.1</version-number>
         <version-suffix>-SNAPSHOT</version-suffix>
-        <revision>${version-number}${version-suffix}</revision>
+        <revision>0.0.1-SNAPSHOT</revision>
     </properties>
 
     <modules>
@@ -28,5 +28,6 @@
         <module>micro-security</module>
         <module>micro-user</module>
         <module>micro-zipkin</module>
+        <module>micro-blog-kotlin</module>
     </modules>
 </project>
