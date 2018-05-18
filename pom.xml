@@ -29,5 +29,6 @@
         <module>micro-user</module>
         <module>micro-zipkin</module>
         <module>micro-blog-kotlin</module>
-    </modules>
+		<module>micro-oauth</module>
+	</modules>
 </project>

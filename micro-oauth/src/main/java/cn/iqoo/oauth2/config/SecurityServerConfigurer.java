@@ -9,7 +9,7 @@
  * @date:
  * @content:
  */
-package cn.iqoo.security.config;
+package cn.iqoo.oauth2.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
