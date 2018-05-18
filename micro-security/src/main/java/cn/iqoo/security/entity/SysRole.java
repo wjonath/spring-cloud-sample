@@ -1,7 +1,7 @@
 /*
  * @project name: micro-build
  * @file name: SysRole
- * @package Name: cn.iqoo.oauth2.entity
+ * @package Name: cn.iqoo.security.entity
  * @date: 2018/5/18 15:51
  * @creator: wangjian-358
  * @line------------------------------
@@ -9,7 +9,7 @@
  * @date:
  * @content:
  */
-package cn.iqoo.oauth2.entity;
+package cn.iqoo.security.entity;
 
 
 import javax.persistence.Entity;

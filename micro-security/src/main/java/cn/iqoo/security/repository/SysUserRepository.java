@@ -1,7 +1,7 @@
 /*
  * @project name: micro-build
  * @file name: SysUserRepository
- * @package Name: cn.iqoo.oauth2.repository
+ * @package Name: cn.iqoo.security.repository
  * @date: 2018/5/18 15:59
  * @creator: wangjian-358
  * @line------------------------------
@@ -9,9 +9,9 @@
  * @date:
  * @content:
  */
-package cn.iqoo.oauth2.repository;
+package cn.iqoo.security.repository;
 
-import cn.iqoo.oauth2.entity.SysUser;
+import cn.iqoo.security.entity.SysUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

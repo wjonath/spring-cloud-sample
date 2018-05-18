@@ -1,7 +1,7 @@
 /*
  * @project name: micro-build
  * @file name: UserAuthService
- * @package Name: cn.iqoo.oauth2.service
+ * @package Name: cn.iqoo.security.service
  * @date: 2018/5/18 14:13
  * @creator: wangjian-358
  * @line------------------------------
@@ -9,10 +9,10 @@
  * @date:
  * @content:
  */
-package cn.iqoo.oauth2.service;
+package cn.iqoo.security.service;
 
-import cn.iqoo.oauth2.entity.SysUser;
-import cn.iqoo.oauth2.repository.SysUserRepository;
+import cn.iqoo.security.entity.SysUser;
+import cn.iqoo.security.repository.SysUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

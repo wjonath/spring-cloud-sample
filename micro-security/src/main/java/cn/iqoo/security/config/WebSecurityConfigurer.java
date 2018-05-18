@@ -9,9 +9,9 @@
  * @date:
  * @content:
  */
-package cn.iqoo.oauth2.config;
+package cn.iqoo.security.config;
 
-import cn.iqoo.oauth2.service.CustomUserService;
+import cn.iqoo.security.service.CustomUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
