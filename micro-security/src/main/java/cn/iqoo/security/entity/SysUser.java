@@ -3,7 +3,7 @@
  * @file name: SysUser
  * @package Name: cn.iqoo.security.entity
  * @date: 2018/5/18 15:15
- * @creator: wangjian-358
+ * @creator: jonath@163.com
  * @line------------------------------
  * @modifier:
  * @date:
@@ -26,9 +26,9 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * ${TODO}
+ * jonath@163.com
  *
- * @author wangjian-358
+ * @author jonath@163.com
  * @date 2018/5/18 15:15
  * @see
  */

@@ -21,7 +21,6 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
+security:
+  basic:
+    enabled: false

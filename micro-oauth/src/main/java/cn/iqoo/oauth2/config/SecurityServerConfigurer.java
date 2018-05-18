@@ -1,14 +1,3 @@
-/*
- * @project name: micro-build
- * @file name: SecurityServerConfigurer
- * @package Name: cn.iqoo.security.config
- * @date: 2018/5/18 9:32
- * @creator: wangjian-358
- * @line------------------------------
- * @modifier:
- * @date:
- * @content:
- */
 package cn.iqoo.oauth2.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +7,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
+import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.ClientDetailsService;
 import org.springframework.security.oauth2.provider.client.JdbcClientDetailsService;
 import org.springframework.security.oauth2.provider.token.DefaultTokenServices;
@@ -28,9 +18,9 @@ import javax.sql.DataSource;
 import java.util.concurrent.TimeUnit;
 
 /**
- * ${TODO}
+ * TODO
  *
- * @author wangjian-358
+ * @author jonath@163.com
  * @date 2018/5/18 9:32
  * @see
  */
@@ -49,6 +39,10 @@ public class SecurityServerConfigurer extends AuthorizationServerConfigurerAdapt
     @Bean
     public ClientDetailsService clientDetails() {
         return new JdbcClientDetailsService(dataSource);
+    }
+
+    @Override
+    public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
     }
 
     @Override

@@ -3,7 +3,7 @@
  * @file name: SysRole
  * @package Name: cn.iqoo.security.entity
  * @date: 2018/5/18 15:51
- * @creator: wangjian-358
+ * @creator: jonath@163.com
  * @line------------------------------
  * @modifier:
  * @date:
@@ -17,9 +17,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
- * ${TODO}
+ * jonath@163.com
  *
- * @author wangjian-358
+ * @author jonath@163.com
  * @date 2018/5/18 15:51
  * @see
  */

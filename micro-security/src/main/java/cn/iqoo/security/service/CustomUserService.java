@@ -3,7 +3,7 @@
  * @file name: UserAuthService
  * @package Name: cn.iqoo.security.service
  * @date: 2018/5/18 14:13
- * @creator: wangjian-358
+ * @creator: jonath@163.com
  * @line------------------------------
  * @modifier:
  * @date:
@@ -22,9 +22,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 /**
- * ${TODO}
+ * jonath@163.com
  *
- * @author wangjian-358
+ * @author jonath@163.com
  * @date 2018/5/18 14:13
  * @see
  */
