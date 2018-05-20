@@ -4,9 +4,12 @@ server:
 spring:
   application:
     name: micro-gateway
-  security:
-    basic:
-      enabled: false
+  cloud:
+    gateway:
+      locator:
+        enabled: true
+      default-filters:
+      - AddResponseHeader=X-Response-Default-Foo, Default-Bar
 management:
   security:
     enabled: false
