@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+
+    <classPathEntry location="C:\Users\jonath\.m2\repository\mysql\mysql-connector-java\5.1.45\mysql-connector-java-5.1.45.jar"/>
+
+    <context id="context" targetRuntime="MyBatis3Simple">
+        <!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection userId="root" password="root" driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost/cloudsample"/>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="cn.iqoo.oauth2.entity" targetProject=".">
+            <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 设置是否在getter方法中，对String类型字段调用trim()方法 -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper" targetProject=".">
+            <property name="enableSubPackages" value="false"/>
+            <!-- 可以为所有生成的接口添加一个父接口，但是MBG只负责生成，不负责检查 -->
+            <property name="rootInterface" value=""/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator targetPackage="cn.iqoo.oauth2.mapper" type="XMLMAPPER" targetProject=".">
+            <property name="enableSubPackages" value="false"/>
+        </javaClientGenerator>
+
+        <table schema="cloudsample" tableName="oauth_client_details" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="true"/>
+    </context>
+</generatorConfiguration>

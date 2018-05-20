@@ -23,4 +23,6 @@ spring:
     maxOpenPreparedStatements: 20
 security:
   basic:
-    enabled: false
+    enabled: true
+  user:
+    password: user

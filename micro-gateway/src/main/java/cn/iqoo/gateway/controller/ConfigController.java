@@ -2,7 +2,7 @@
  * @author: jonath@163.com
  * Copyright 2018
  */
-package cn.iqoo.gateway;
+package cn.iqoo.gateway.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

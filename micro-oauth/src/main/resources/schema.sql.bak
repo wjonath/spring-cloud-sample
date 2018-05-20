@@ -1,5 +1,7 @@
 create database cloudsample;
 
+use cloudsample;
+
 -- used in tests that use HSQL
 create table oauth_client_details (
   client_id VARCHAR(255) PRIMARY KEY,

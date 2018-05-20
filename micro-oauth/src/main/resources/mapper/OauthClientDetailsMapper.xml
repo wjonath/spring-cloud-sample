@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.iqoo.oauth2.mapper.OauthClientDetailsMapper" >
+  <resultMap id="BaseResultMap" type="cn.iqoo.oauth2.entity.OauthClientDetails" >
+    <id column="client_id" property="clientId" jdbcType="VARCHAR" />
+    <result column="resource_ids" property="resourceIds" jdbcType="VARCHAR" />
+    <result column="client_secret" property="clientSecret" jdbcType="VARCHAR" />
+    <result column="scope" property="scope" jdbcType="VARCHAR" />
+    <result column="authorized_grant_types" property="authorizedGrantTypes" jdbcType="VARCHAR" />
+    <result column="web_server_redirect_uri" property="webServerRedirectUri" jdbcType="VARCHAR" />
+    <result column="authorities" property="authorities" jdbcType="VARCHAR" />
+    <result column="access_token_validity" property="accessTokenValidity" jdbcType="INTEGER" />
+    <result column="refresh_token_validity" property="refreshTokenValidity" jdbcType="INTEGER" />
+    <result column="additional_information" property="additionalInformation" jdbcType="VARCHAR" />
+    <result column="autoapprove" property="autoapprove" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from oauth_client_details
+    where client_id = #{clientId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.iqoo.oauth2.entity.OauthClientDetails" >
+    insert into oauth_client_details (client_id, resource_ids, client_secret, 
+      scope, authorized_grant_types, web_server_redirect_uri, 
+      authorities, access_token_validity, refresh_token_validity, 
+      additional_information, autoapprove)
+    values (#{clientId,jdbcType=VARCHAR}, #{resourceIds,jdbcType=VARCHAR}, #{clientSecret,jdbcType=VARCHAR}, 
+      #{scope,jdbcType=VARCHAR}, #{authorizedGrantTypes,jdbcType=VARCHAR}, #{webServerRedirectUri,jdbcType=VARCHAR}, 
+      #{authorities,jdbcType=VARCHAR}, #{accessTokenValidity,jdbcType=INTEGER}, #{refreshTokenValidity,jdbcType=INTEGER}, 
+      #{additionalInformation,jdbcType=VARCHAR}, #{autoapprove,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="cn.iqoo.oauth2.entity.OauthClientDetails" >
+    update oauth_client_details
+    set resource_ids = #{resourceIds,jdbcType=VARCHAR},
+      client_secret = #{clientSecret,jdbcType=VARCHAR},
+      scope = #{scope,jdbcType=VARCHAR},
+      authorized_grant_types = #{authorizedGrantTypes,jdbcType=VARCHAR},
+      web_server_redirect_uri = #{webServerRedirectUri,jdbcType=VARCHAR},
+      authorities = #{authorities,jdbcType=VARCHAR},
+      access_token_validity = #{accessTokenValidity,jdbcType=INTEGER},
+      refresh_token_validity = #{refreshTokenValidity,jdbcType=INTEGER},
+      additional_information = #{additionalInformation,jdbcType=VARCHAR},
+      autoapprove = #{autoapprove,jdbcType=VARCHAR}
+    where client_id = #{clientId,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select client_id, resource_ids, client_secret, scope, authorized_grant_types, web_server_redirect_uri, 
+    authorities, access_token_validity, refresh_token_validity, additional_information, 
+    autoapprove
+    from oauth_client_details
+    where client_id = #{clientId,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select client_id, resource_ids, client_secret, scope, authorized_grant_types, web_server_redirect_uri, 
+    authorities, access_token_validity, refresh_token_validity, additional_information, 
+    autoapprove
+    from oauth_client_details
+  </select>
+</mapper>

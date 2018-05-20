@@ -43,6 +43,7 @@ public class SecurityServerConfigurer extends AuthorizationServerConfigurerAdapt
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+        security.tokenKeyAccess("permitAll()");
     }
 
     @Override

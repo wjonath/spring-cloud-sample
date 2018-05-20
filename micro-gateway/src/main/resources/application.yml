@@ -1,9 +1,12 @@
 server:
-  port: 6001
+  port: 6002
 
 spring:
   application:
     name: micro-gateway
+  security:
+    basic:
+      enabled: false
 management:
   security:
     enabled: false
