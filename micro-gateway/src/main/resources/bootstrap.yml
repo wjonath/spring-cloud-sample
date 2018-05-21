@@ -1,19 +1,11 @@
-server:
-  port: 6002
-
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:6006/eureka/
+      defaultZone: http://www.iqoo.cn:6006/eureka/
 
 spring:
-  application:
-    name: micro-gateway
   cloud:
-    gateway:
+    config:
       discovery:
-        locator:
-          enabled: true
-#  cloud:
-#    config:
-#      uri: http://localhost:6001
+        enabled: true
+        service-id: micro-config
