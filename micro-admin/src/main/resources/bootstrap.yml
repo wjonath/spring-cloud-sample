@@ -14,7 +14,7 @@ eureka:
 
 # 测试,不使用密码
 server:
-  port: 6006
+  port: 6005
 
 management:
   security:

@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 @EnableDiscoveryClient
 public class GatewayApplication {
 
-    @Value("${ms.uri:http://httpbin.org:80}")
+    @Value("${test.uri:http://httpbin.org:80}")
     String uri;
 
     @Bean

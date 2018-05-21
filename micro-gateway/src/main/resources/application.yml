@@ -1,14 +1,9 @@
 ms:
   uri:
-    user: lb://micro-user
-    blog: lb://micro-blog
-
-server:
-  port: 6002
+    user: ws://micro-user
+    blog: ws://micro-blog
 
 spring:
-  application:
-    name: micro-gateway
   cloud:
     gateway:
       discovery:
