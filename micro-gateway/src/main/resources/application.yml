@@ -1,3 +1,8 @@
+ms:
+  uri:
+    user: lb://micro-user
+    blog: lb://micro-blog
+
 server:
   port: 6002
 
@@ -6,11 +11,31 @@ spring:
     name: micro-gateway
   cloud:
     gateway:
-      locator:
-        enabled: true
+      discovery:
+        locator:
+          enabled: true
       default-filters:
-      - AddResponseHeader=X-Response-Default-Foo, Default-Bar
+      - AddResponseHeader=X-Response-Default, Gateway
+      routes:
+      - id: path-route-user
+        uri: ${ms.uri.user}
+        predicates:
+        - Path=/user/**
+        filters:
+        - AddResponseHeader=X-Response-User, User-Bar
+      - id: path-route-blog
+        uri: ${ms.uri.blog}
+        predicates:
+        - Path=/blog/**
+        filters:
+        - AddResponseHeader=X-Response-Blog, Blog-Bar
+
 management:
   security:
     enabled: false
+
 debug: true
+
+logging:
+  level:
+    org.springframework.cloud.gateway: TRACE
