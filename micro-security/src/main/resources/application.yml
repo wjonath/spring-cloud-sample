@@ -1,6 +1,8 @@
 server:
   port: 8010
 spring:
+  application:
+    name: micro-security
   datasource:
     name: cloudsample
     url: jdbc:mysql://127.0.0.1:3306/cloudsample?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
@@ -8,20 +10,37 @@ spring:
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    filters: stat
-    maxActive: 20
-    initialSize: 1
-    maxWait: 60000
-    minIdle: 1
-    timeBetweenEvictionRunsMillis: 60000
-    minEvictableIdleTimeMillis: 300000
-    validationQuery: select 'x'
-    testWhileIdle: true
-    testOnBorrow: false
-    testOnReturn: false
-    poolPreparedStatements: true
-    maxOpenPreparedStatements: 20
+    druid:
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
+security:
+  user:
+    password: user
+  ignored: /
+  sessions: never
+  oauth2:
+    sso:
+      login-path: /login
+    client:
+      client-id: 625d5ef4fe9dc21708ff
+      client-secret: 09528ccc9a12ad5f81be0e71c1fd017ce4044af2
+      access-token-uri: http://localhost:8012/oauth/access_token
+      user-authorization-uri: http://localhost:8012/oauth/authorize
+    resource:
+      user-info-uri: https://localhost:8012/user
+      prefer-token-info: false

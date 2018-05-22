@@ -22,9 +22,9 @@ public class OAuthController {
 
     }
 
-    @GetMapping("/user")
-    public String getUser() {
-        return "user";
+    @GetMapping("/auth")
+    public String getAuth() {
+        return "auth";
     }
 
     @GetMapping("/code")

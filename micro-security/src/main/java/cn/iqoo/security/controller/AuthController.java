@@ -3,6 +3,8 @@ package cn.iqoo.security.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * jonath@163.com
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class AuthController {
 
     @GetMapping("/user")
+    @ResponseBody
     public String getUser() {
         return "user";
     }
@@ -30,7 +33,12 @@ public class AuthController {
     }
 
     @GetMapping("/login")
-    public String login() {
+    public String login1() {
+        return "login";
+    }
+
+    @PostMapping("/login")
+    public String login2() {
         return "login";
     }
 }
