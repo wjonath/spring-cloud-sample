@@ -1,13 +1,16 @@
+# server
 server:
   port: 6002
-
+# custom
 ms:
   uri:
     user: ws://micro-user
     blog: ws://micro-blog
     oauth: ws://micro-oauth
-
+# spring
 spring:
+  application:
+    name: micro-gateway
   cloud:
     gateway:
       discovery:
@@ -34,21 +37,17 @@ spring:
         - Path=/blog/**
         filters:
         - AddResponseHeader=X-Response-Blog, Blog-Bar
-  security:
-    user:
-      password: user
-
+# management
 management:
   security:
     enabled: false
-
+# debug
 debug: true
-
+# log
 logging:
   level:
     org.springframework.cloud.gateway: TRACE
-
-
+# security
 security:
   oauth2:
     sso:
@@ -59,5 +58,9 @@ security:
       access-token-uri: http://localhost:8012/oauth/access_token
       user-authorization-uri: http://localhost:8012/oauth/authorize
     resource:
+#      jwt:
+#        key-uri: http://localhost:8012/oauth/token_key
+#        key-value: symmetric secret or PEM-encoded RSA public key
       user-info-uri: https://localhost:8012/user
-      prefer-token-info: false
+      prefer-token-info: true
+      token-info-uri: http://localhost:8012/oauth/check_token

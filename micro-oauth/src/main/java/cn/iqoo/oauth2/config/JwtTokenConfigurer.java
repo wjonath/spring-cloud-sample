@@ -22,7 +22,7 @@ import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
 
 /**
- * ${TODO}
+ * JWT
  *
  * @author wangjian-358
  * @date 2018/5/22 15:30

@@ -1,15 +1,4 @@
-/*
- * @project name: micro-build
- * @file name: WebSecurityConfigurer
- * @package Name: cn.iqoo.gateway.config
- * @date: 2018/5/23 15:32
- * @creator: wangjian-358
- * @line------------------------------
- * @modifier:
- * @date:
- * @content:
- */
-package cn.iqoo.gateway.config;
+package cn.iqoo.blog.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -20,7 +9,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
  * ${TODO}
  *
  * @author wangjian-358
- * @date 2018/5/23 15:32
+ * @date 2018/5/22 17:46
  * @see
  */
 @Configuration
@@ -30,8 +19,8 @@ public class ResourceServerConfigurer extends ResourceServerConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
         http
                 .antMatcher("/**")
-                .authorizeRequests()
-                .anyRequest().authenticated()
-                .and().csrf().disable();
+                .authorizeRequests().anyRequest().authenticated()
+                .and()
+                .csrf().disable();
     }
 }

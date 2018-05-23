@@ -1,8 +1,11 @@
+# server
 server:
   port: 8002
+# management
 management:
   security:
     enabled: false
+# spring
 spring:
   application:
     name: micro-blog
@@ -17,4 +20,22 @@ spring:
 #        binder:
 #          brokers: 192.168.146.128:9092
 #          zkNodes: 192.168.146.128:2181
+# debug
 debug: true
+# security
+security:
+  oauth2:
+    sso:
+      login-path: /login
+    client:
+      client-id: 625d5ef4fe9dc21708ff
+      client-secret: 09528ccc9a12ad5f81be0e71c1fd017ce4044af2
+      access-token-uri: http://localhost:8012/oauth/access_token
+      user-authorization-uri: http://localhost:8012/oauth/authorize
+    resource:
+#      jwt:
+#        key-uri: http://localhost:8012/oauth/token_key
+#        key-value: symmetric secret or PEM-encoded RSA public key
+      user-info-uri: https://localhost:8012/user
+      prefer-token-info: true
+      token-info-uri: http://localhost:8012/oauth/check_token

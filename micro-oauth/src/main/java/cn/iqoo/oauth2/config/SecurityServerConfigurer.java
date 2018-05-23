@@ -3,6 +3,7 @@ package cn.iqoo.oauth2.config;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -11,6 +12,9 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
+import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
+
+import javax.sql.DataSource;
 
 /**
  * TODO
@@ -25,19 +29,18 @@ public class SecurityServerConfigurer extends AuthorizationServerConfigurerAdapt
 
     @Autowired
     private AuthenticationManager authenticationManager;
-
-/*    @Autowired
-    private TokenStore jwtTokenStore;
     @Autowired
     private JwtAccessTokenConverter jwtAccessTokenConverter;
+    @Autowired
+    private RedisConnectionFactory redisConnectionFactory;
+    @Autowired
+    private DataSource dataSource;
 
     @Bean
     public TokenStore tokenStore() {
-        return new JwtTokenStore(jwtAccessTokenConverter);
-    }*/
-
-    @Bean
-    public TokenStore tokenStore() {
+//        return new RedisTokenStore(redisConnectionFactory);
+//        return new JdbcTokenStore(dataSource);
+//        return new JwtTokenStore(jwtAccessTokenConverter);
         return new InMemoryTokenStore();
     }
 
@@ -55,7 +58,7 @@ public class SecurityServerConfigurer extends AuthorizationServerConfigurerAdapt
                 .withClient("client")
                 .scopes("xx")
                 .secret("android")
-                .authorizedGrantTypes("password", "authorization_code", "refresh_token", "implicit")
+                .authorizedGrantTypes("password", "authorization_code", "refresh_token")
                 .and()
                 .withClient("625d5ef4fe9dc21708ff")
                 .scopes("read", "write")
@@ -68,5 +71,13 @@ public class SecurityServerConfigurer extends AuthorizationServerConfigurerAdapt
         endpoints
                 .authenticationManager(authenticationManager)
                 .tokenStore(tokenStore());
+//                .accessTokenConverter(jwtAccessTokenConverter);
+
+//        DefaultTokenServices tokenServices = new DefaultTokenServices();
+//        tokenServices.setAccessTokenValiditySeconds(5);
+//        tokenServices.setTokenStore(endpoints.getTokenStore());
+//        tokenServices.setClientDetailsService(endpoints.getClientDetailsService());
+//        tokenServices.setTokenEnhancer(endpoints.getTokenEnhancer());
+//        endpoints.tokenServices(tokenServices);
     }
 }

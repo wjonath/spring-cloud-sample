@@ -22,6 +22,19 @@ spring:
       testOnReturn: false
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
+#  redis:
+#    database: 0
+#    host: 192.168.10.234
+#    password: 'hhly'
+#    pool:
+#      max-active: 8
+#      max-idle: 8
+#      max-wait: -1
+#      min-idle: 0
+#    port: 6379
+#    cluster:
+#      nodes: 192.168.10.44:7001,192.168.10.44:7002
+#      max-redirects: 5
 security:
   basic:
     enabled: true
