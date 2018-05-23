@@ -55,12 +55,12 @@ public class SecurityServerConfigurer extends AuthorizationServerConfigurerAdapt
                 .withClient("client")
                 .scopes("xx")
                 .secret("android")
-                .authorizedGrantTypes("password", "authorization_code", "refresh_token")
+                .authorizedGrantTypes("password", "authorization_code", "refresh_token", "implicit")
                 .and()
                 .withClient("625d5ef4fe9dc21708ff")
-                .scopes("yy")
+                .scopes("read", "write")
                 .secret("09528ccc9a12ad5f81be0e71c1fd017ce4044af2")
-                .authorizedGrantTypes("password", "authorization_code", "refresh_token");
+                .authorizedGrantTypes("password", "authorization_code", "refresh_token", "implicit");
     }
 
     @Override
