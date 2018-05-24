@@ -30,5 +30,6 @@
         <module>micro-zipkin</module>
         <module>micro-blog-kotlin</module>
 		<module>micro-oauth</module>
-	</modules>
+        <module>micro-debug</module>
+    </modules>
 </project>

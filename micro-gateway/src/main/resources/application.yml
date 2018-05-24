@@ -47,6 +47,7 @@ debug: true
 logging:
   level:
     org.springframework.cloud.gateway: TRACE
+    org.springframework.security.oauth2: debug
 # security
 security:
   oauth2:
