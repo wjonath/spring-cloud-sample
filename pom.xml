@@ -31,5 +31,6 @@
         <module>micro-blog-kotlin</module>
 		<module>micro-oauth</module>
         <module>micro-debug</module>
+        <module>micro-zuul</module>
     </modules>
 </project>

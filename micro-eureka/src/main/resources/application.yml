@@ -10,6 +10,6 @@ eureka:
     register-with-eureka: false
     fetch-registry: false
     service-url:
-      defaultZone: http://www.iqoo.cn:6006/eureka/
+      defaultZone: http://eureka.iqoo.cn/eureka/
   server:
     enable-self-preservation: false

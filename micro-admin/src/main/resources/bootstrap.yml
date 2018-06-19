@@ -10,7 +10,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://www.iqoo.cn:6006/eureka/
+      defaultZone: http://eureka.iqoo.cn/eureka/
 
 # 测试,不使用密码
 server:

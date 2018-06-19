@@ -6,7 +6,8 @@ eureka:
     hostname: localhost
   client:
     service-url:
-      defaultZone: http://localhost:5001/eureka/
+      defaultZone: http://eureka.iqoo.cn/eureka/
+
 spring:
   application:
     name: micro-zipkin
