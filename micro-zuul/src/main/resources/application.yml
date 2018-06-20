@@ -1,5 +1,17 @@
+# spring
 spring:
   application:
     name: micro-zuul
+# server
 server:
   port: 8021
+# zuul
+zuul:
+  routes:
+    api-blog:
+      path: /blog/**
+      serviceId: micro-blog
+      stripPrefix: false
+    api-user:
+      path: /user/**
+      serviceId: micro-user

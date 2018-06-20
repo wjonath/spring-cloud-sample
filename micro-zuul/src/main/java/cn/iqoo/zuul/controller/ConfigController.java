@@ -23,4 +23,5 @@ public class ConfigController {
         log.debug("zuul");
         return "zuul";
     }
+
 }

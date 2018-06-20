@@ -1,9 +1,9 @@
+# eureka
 eureka:
   client:
     service-url:
       defaultZone: http://eureka.iqoo.cn/eureka/
-
-
+# spring
 spring:
   cloud:
     config:

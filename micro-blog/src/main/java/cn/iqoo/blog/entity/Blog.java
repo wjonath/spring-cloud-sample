@@ -4,10 +4,9 @@
  */
 package cn.iqoo.blog.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import lombok.experimental.Accessors;
 
 import java.util.Date;
 
@@ -18,11 +17,12 @@ import java.util.Date;
  * @date: 2018/5/11 22:42
  * @see:
  */
-@Slf4j
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
+@Accessors(chain = true)
 public class Blog {
     private String title;
+    private int category;
     private Date createTime;
+    private String author;
 }

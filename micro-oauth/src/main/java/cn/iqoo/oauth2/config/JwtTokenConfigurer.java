@@ -47,7 +47,7 @@ public class JwtTokenConfigurer {
     @Bean
     public JwtAccessTokenConverter jwtAccessTokenConverter() {
         JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
-        Assert.state(!StringUtils.isEmpty(jwtSigningKey), "jwtSigningKey is not configured");
+        Assert.state(!StringUtils.isEmpty(jwtSigningKey), "jwtSigningKey is not configured.");
         jwtAccessTokenConverter.setSigningKey(jwtSigningKey);
         return jwtAccessTokenConverter;
     }

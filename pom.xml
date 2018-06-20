@@ -28,8 +28,7 @@
         <module>micro-security</module>
         <module>micro-user</module>
         <module>micro-zipkin</module>
-        <module>micro-blog-kotlin</module>
-		<module>micro-oauth</module>
+        <module>micro-oauth</module>
         <module>micro-debug</module>
         <module>micro-zuul</module>
     </modules>
