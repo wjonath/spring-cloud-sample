@@ -30,14 +30,15 @@
         <sqlMapGenerator targetPackage="mapper" targetProject=".">
             <property name="enableSubPackages" value="false"/>
             <!-- 可以为所有生成的接口添加一个父接口，但是MBG只负责生成，不负责检查 -->
-            <property name="rootInterface" value=""/>
+            <property name="rootInterface" value="BaseMapper"/>
         </sqlMapGenerator>
 
         <javaClientGenerator targetPackage="cn.iqoo.oauth2.mapper" type="XMLMAPPER" targetProject=".">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
-        <table schema="cloudsample" tableName="oauth_client_details" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" enableUpdateByExample="true"/>
+        <table schema="cloudsample" tableName="user_base"
+               enableInsert="true" enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true" enableDeleteByPrimaryKey="true"
+               enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableUpdateByExample="false"/>
     </context>
 </generatorConfiguration>
