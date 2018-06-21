@@ -6,6 +6,7 @@ package cn.iqoo.oauth2.mapper;
 
 import cn.iqoo.oauth2.entity.OauthClientDetails;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -19,9 +20,9 @@ public interface BaseMapper<T, PK> {
 
     int insert(T record);
 
-    OauthClientDetails selectByPrimaryKey(PK pk);
+    T selectByPrimaryKey(PK pk);
 
-    List<OauthClientDetails> selectAll();
+    List<T> selectAll();
 
     int updateByPrimaryKey(T record);
 }

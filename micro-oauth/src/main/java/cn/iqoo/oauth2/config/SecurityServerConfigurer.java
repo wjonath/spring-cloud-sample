@@ -11,10 +11,7 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
-
-import javax.sql.DataSource;
 
 /**
  * TODO
@@ -33,15 +30,10 @@ public class SecurityServerConfigurer extends AuthorizationServerConfigurerAdapt
     private JwtAccessTokenConverter jwtAccessTokenConverter;
     @Autowired
     private RedisConnectionFactory redisConnectionFactory;
-    @Autowired
-    private DataSource dataSource;
 
     @Bean
     public TokenStore tokenStore() {
-//        return new RedisTokenStore(redisConnectionFactory);
-//        return new JdbcTokenStore(dataSource);
-//        return new JwtTokenStore(jwtAccessTokenConverter);
-        return new InMemoryTokenStore();
+        return new CustomTokenStore(jwtAccessTokenConverter);
     }
 
     @Override
@@ -70,8 +62,8 @@ public class SecurityServerConfigurer extends AuthorizationServerConfigurerAdapt
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints
                 .authenticationManager(authenticationManager)
+                .accessTokenConverter(jwtAccessTokenConverter)
                 .tokenStore(tokenStore());
-//                .accessTokenConverter(jwtAccessTokenConverter);
 
 //        DefaultTokenServices tokenServices = new DefaultTokenServices();
 //        tokenServices.setAccessTokenValiditySeconds(5);

@@ -15,7 +15,7 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
 import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 
 /**
- * ${TODO}
+ * 自定义的 TokenStore，可以使用 JWT 然后存入 redis，对 token 增加黑、白名单功能
  *
  * @author wangjian-358
  * @date 2018/5/24 11:23

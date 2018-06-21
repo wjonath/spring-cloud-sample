@@ -42,7 +42,7 @@ management:
   security:
     enabled: false
 # debug
-debug: true
+debug: false
 # log
 logging:
   level:
