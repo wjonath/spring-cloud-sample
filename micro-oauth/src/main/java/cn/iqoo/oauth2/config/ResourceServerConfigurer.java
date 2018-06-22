@@ -31,6 +31,7 @@
 //        http
 //                .csrf().disable()
 //                .authorizeRequests()
-//                .antMatchers("/**").permitAll();
+//                .anyRequest().authenticated()
+//                .antMatchers("/oauth/**").permitAll();
 //    }
 //}

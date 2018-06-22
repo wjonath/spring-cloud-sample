@@ -47,6 +47,7 @@ public class CustomUserService implements UserDetailsService {
 
     public static void main(String[] args) {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        System.out.printf(encoder.encode("root"));
+        System.out.println(encoder.encode("root"));
+        System.out.println(encoder.encode("user"));
     }
 }

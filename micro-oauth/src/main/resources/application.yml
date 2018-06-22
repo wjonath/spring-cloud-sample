@@ -22,6 +22,9 @@ spring:
       testOnReturn: false
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
+  security:
+    user:
+      password: user
 #  redis:
 #    database: 0
 #    host: 192.168.10.234
@@ -35,33 +38,19 @@ spring:
 #    cluster:
 #      nodes: 192.168.10.44:7001,192.168.10.44:7002
 #      max-redirects: 5
-# security
-security:
-  basic:
-    enabled: true
-  user:
-    password: user
-  oauth2:
-    sso:
-      login-path: /login
-    client:
-      client-id: 625d5ef4fe9dc21708ff
-      client-secret: 09528ccc9a12ad5f81be0e71c1fd017ce4044af2
-      access-token-uri: http://localhost:8012/oauth/access_token
-      user-authorization-uri: http://localhost:8012/oauth/authorize
-    resource:
-      user-info-uri: https://localhost:8012/user
-      prefer-token-info: false
-      filter-order: 3
 jwt:
   signing:
-    key: 331112
+    key: 112233
 # mybatis
 mybatis:
   mapper-locations: classpath:mapper/*.xml
 # debug
 debug: true
-
-management:
-  security:
-    enabled: false
+# security
+security:
+  oauth2:
+    client:
+      client-id: gogogo
+      client-secret: android
+      access-token-uri: http://localhost:8012/oauth/access_token
+      user-authorization-uri: http://localhost:8012/oauth/authorize

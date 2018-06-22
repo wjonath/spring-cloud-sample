@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -45,17 +46,25 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .inMemoryAuthentication()
-                .withUser("user").password("user").roles("USER")
-                .and().withUser("root").password("root").roles("ADMIN");
+                .withUser("user").password("$2a$10$TCixeLNHTSj6dfs/genRKuAtbok41NJRP9kVaugYnntzGYanetMsO").roles("USER")
+                .and().withUser("root").password("$2a$10$.nJNGBjVGNvxZ/v/ULaKVeIPnMN7ETKg7WyjfvTBzdFXoQa6RRCLG").roles("ADMIN");
     }
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
                 .authorizeRequests()
-                .anyRequest().authenticated()
-                .antMatchers("/oauth/**").permitAll()
-                .and().httpBasic();
+                .antMatchers("/*").permitAll()
+                .and().formLogin().loginPage("/login").failureUrl("/login?error").permitAll()
+                .and().logout().permitAll();
+    }
+
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        web
+                .ignoring().antMatchers("/static/**")
+                .and().ignoring().antMatchers("favicon.ico");
     }
 
 }
