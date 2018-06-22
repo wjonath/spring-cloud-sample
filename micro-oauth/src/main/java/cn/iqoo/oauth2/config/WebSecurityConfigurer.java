@@ -46,7 +46,7 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .inMemoryAuthentication()
-                .withUser("user").password("$2a$10$TCixeLNHTSj6dfs/genRKuAtbok41NJRP9kVaugYnntzGYanetMsO").roles("USER")
+                .withUser("user").password("user").roles("USER")
                 .and().withUser("root").password("$2a$10$.nJNGBjVGNvxZ/v/ULaKVeIPnMN7ETKg7WyjfvTBzdFXoQa6RRCLG").roles("ADMIN");
     }
 
@@ -55,9 +55,8 @@ public class WebSecurityConfigurer extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/*").permitAll()
-                .and().formLogin().loginPage("/login").failureUrl("/login?error").permitAll()
-                .and().logout().permitAll();
+                .anyRequest().authenticated().antMatchers("/oauth/**").permitAll()
+                .and().httpBasic();
     }
 
     @Override

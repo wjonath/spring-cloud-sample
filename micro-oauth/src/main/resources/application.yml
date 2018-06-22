@@ -22,9 +22,6 @@ spring:
       testOnReturn: false
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
-  security:
-    user:
-      password: user
 #  redis:
 #    database: 0
 #    host: 192.168.10.234
@@ -46,11 +43,3 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
 # debug
 debug: true
-# security
-security:
-  oauth2:
-    client:
-      client-id: gogogo
-      client-secret: android
-      access-token-uri: http://localhost:8012/oauth/access_token
-      user-authorization-uri: http://localhost:8012/oauth/authorize
