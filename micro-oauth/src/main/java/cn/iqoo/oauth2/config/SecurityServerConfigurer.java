@@ -11,7 +11,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerEndpointsConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.TokenStore;
-import org.springframework.security.oauth2.provider.token.store.InMemoryTokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
 import javax.sql.DataSource;
@@ -38,10 +37,8 @@ public class SecurityServerConfigurer extends AuthorizationServerConfigurerAdapt
 
     @Bean
     public TokenStore tokenStore() {
-//        return new RedisTokenStore(redisConnectionFactory);
-//        return new JdbcTokenStore(dataSource);
-//        return new JwtTokenStore(jwtAccessTokenConverter);
-        return new InMemoryTokenStore();
+        return new CustomTokenStore(jwtAccessTokenConverter);
+//        return new InMemoryTokenStore();
     }
 
     @Override
@@ -56,7 +53,7 @@ public class SecurityServerConfigurer extends AuthorizationServerConfigurerAdapt
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
                 .withClient("client")
-                .scopes("xx")
+                .scopes("app")
                 .secret("android")
                 .authorizedGrantTypes("password", "authorization_code", "refresh_token")
                 .and()
@@ -70,8 +67,8 @@ public class SecurityServerConfigurer extends AuthorizationServerConfigurerAdapt
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         endpoints
                 .authenticationManager(authenticationManager)
-                .tokenStore(tokenStore());
-//                .accessTokenConverter(jwtAccessTokenConverter);
+                .tokenStore(tokenStore())
+                .accessTokenConverter(jwtAccessTokenConverter);
 
 //        DefaultTokenServices tokenServices = new DefaultTokenServices();
 //        tokenServices.setAccessTokenValiditySeconds(5);
