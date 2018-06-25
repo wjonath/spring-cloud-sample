@@ -1,30 +1,28 @@
 /*
-package cn.iqoo.blog.config;
+ * @author: jonath@163.com
+ * Copyright 2018
+ */
+package cn.iqoo.zuul.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
 
-*/
 /**
- * ${TODO}
+ * TODO
  *
- * @author wangjian-358
- * @date 2018/5/22 17:46
- * @see
- *//*
-
+ * @author: jonath@163.com
+ * @date: 2018/6/23 23:53
+ */
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfigurer extends ResourceServerConfigurerAdapter {
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http
-                .antMatcher("/blog/user/**")
-                .authorizeRequests().anyRequest().authenticated()
-                .and()
-                .csrf().disable();
+                .csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/blog/**").authenticated();
     }
 }
-*/

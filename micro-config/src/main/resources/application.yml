@@ -11,11 +11,6 @@ spring:
           uri: https://github.com/wjonath/config-center.git
       label: master
 
-eureka:
-  client:
-    service-url:
-      defaultZone: http://eureka.iqoo.cn/eureka/
-
 management:
   security:
     enabled: false

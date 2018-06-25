@@ -28,6 +28,11 @@ spring:
         max-wait: -1
         min-idle: 0
     port: 6379
+  rabbitmq:
+    host: centos
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
   activemq:
     broker-url: tcp://localhost:61616
     pool:

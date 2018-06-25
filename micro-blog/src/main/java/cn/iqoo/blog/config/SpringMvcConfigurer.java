@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  */
 @Configuration
 @EnableWebMvc
-public class SpringMvcConfig extends WebMvcConfigurerAdapter {
+public class SpringMvcConfigurer extends WebMvcConfigurerAdapter {
 
     /**
      * 静态资源处理

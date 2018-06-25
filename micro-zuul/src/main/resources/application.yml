@@ -15,3 +15,24 @@ zuul:
     api-user:
       path: /user/**
       serviceId: micro-user
+      stripPrefix: false
+    api-oauth:
+      path: /oauth/**
+      serviceId: micro-oauth
+      stripPrefix: false
+# security
+security:
+  oauth2:
+    client:
+      client-id: client
+      client-secret: android
+      access-token-uri: http://localhost:8012/oauth/access_token
+      user-authorization-uri: http://localhost:8012/oauth/authorize
+    resource:
+#      jwt:
+#        key-uri: http://localhost:8012/oauth/token_key
+#        key-value: symmetric secret or PEM-encoded RSA public key
+      user-info-uri: https://localhost:8012/user
+      prefer-token-info: true
+      token-info-uri: http://localhost:8012/oauth/check_token
+      filter-order: 3
